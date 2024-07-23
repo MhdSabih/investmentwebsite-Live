@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.formMain {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formInner {
+  width: 500px;
+  padding: 22px;
+}
+
+@media (max-width: 518px) {
+  .formInner {
+    width: 95%;
+  }
+}
+
+.formInner > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.formInner > div > label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.formInner > div > input {
+  padding: 8px 11px;
+  outline: none;
+}
+
+.formInner > div > textarea {
+  outline: none;
+  padding: 8px 11px;
+}

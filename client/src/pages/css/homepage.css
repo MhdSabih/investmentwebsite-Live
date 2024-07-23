@@ -1,0 +1,14 @@
+/* HomePage.css */
+@import 'tailwindcss/utilities';
+
+.border-gold {
+  border-color: #d4af37; /* Gold color */
+}
+
+.hover\:bg-gold:hover {
+  background-color: #d4af37;
+}
+
+.hover\:text-black:hover {
+  color: #000;
+}

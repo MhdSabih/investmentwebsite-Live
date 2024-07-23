@@ -14,13 +14,9 @@ const HomePage = () => {
       <div className="relative z-10 flex flex-col items-start justify-center h-screen bg-black bg-opacity-0 text-white px-6 py-12 md:px-12 lg:px-24 font-amiri">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal mb-6">
           <span className="block">Embracing</span>
-          <span className="block">complexity to</span>
-          <span className="block">capture alpha</span>
+          <span className="block">the complexity of</span>
+          <span className="block">Time and Space</span>
         </h1>
-        <span className="text-base md:text-lg mb-4">since 1991.</span>
-        <a className="inline-block border border-gold text-white py-3 px-6 rounded-md hover:bg-gold hover:text-black transition duration-300 cursor-pointer">
-          Learn More
-        </a>
       </div>
     </section>
   );

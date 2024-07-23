@@ -32,7 +32,7 @@ const Navbar = () => {
             alt="Flowbite Logo"
           />
           <span className="self-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap text-white">
-            Investment Website
+            ZarFi
           </span>
         </NavLink>
         <button

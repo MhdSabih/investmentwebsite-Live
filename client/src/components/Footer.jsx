@@ -79,19 +79,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="flex gap-4 hover:cursor-pointer">
             <img
-              src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
-              width="30"
-              height="30"
-              alt="fb"
-            />
-            <img
-              src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
-              width="30"
-              height="30"
-              alt="tw"
-            />
-            <img
-              src="https://www.svgrepo.com/show/28145/linkedin.svg"
+              src="https://www.svgrepo.com/show/452229/instagram-1.svg"
               width="30"
               height="30"
               alt="in"
@@ -99,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="font-sans p-8 text-start text-gray-300 md:text-center md:text-lg md:p-4">
-          © 2023 Investment Website. All rights reserved.
+          © 2023 ZarFi, LLC. All rights reserved.
         </p>
       </div>
     </footer>

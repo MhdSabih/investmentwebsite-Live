@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const serverUrl = "http://localhost:5001/api";
+const serverUrl =
+  import.meta.env.VITE_SERVER_API || "http://localhost:5000/api";
 axios.defaults.withCredentials = true;
 
 export const LoginUser = async (email, password) => {
@@ -41,6 +42,7 @@ export const adminLogin = async (email, password) => {
 };
 
 export const SignUpUser = async (email, password) => {
+  console.log(serverUrl);
   try {
     const response = await axios.post(`${serverUrl}/signup`, {
       email,

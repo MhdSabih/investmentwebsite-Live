@@ -67,7 +67,6 @@ const LoginPage = () => {
     if (result.message.user) {
       localStorage.setItem("_Token_", result.message.accessToken);
       toast.dark("Login Successful!");
-      // navigate(`/`);
       window.location.href = "/";
     } else {
       toast.error(result.message);

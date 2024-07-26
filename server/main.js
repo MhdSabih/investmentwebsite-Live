@@ -10,20 +10,17 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// CORS options
 const corsOptions = {
-  origin: "http://localhost:5173",
-  credentials: true, // to allow cookies from the frontend
+  origin: "http://localhost:5173", // Replace with your frontend origin
+  credentials: true,
 };
 
-// Middlewares
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  next();
-});
+// Apply CORS middleware with options
 app.use(cors(corsOptions));
+
+// Other middlewares
 app.use(express.json());
 app.use(cookieParser());
 

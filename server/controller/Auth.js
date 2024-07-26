@@ -4,7 +4,6 @@ import { generateToken, setTokenAsCookies } from "../utils/jwt.helper.js";
 
 export const SignUp = async (req, res) => {
   const { email, password, role } = req.body;
-  console.log(email, password);
 
   try {
     if (!email || !password) {
@@ -29,7 +28,7 @@ export const SignUp = async (req, res) => {
 
 export const Login = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
+
   try {
     if (!email || !password) {
       return res

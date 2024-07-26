@@ -42,7 +42,6 @@ export const adminLogin = async (email, password) => {
 };
 
 export const SignUpUser = async (email, password) => {
-  console.log(serverUrl);
   try {
     const response = await axios.post(`${serverUrl}/signup`, {
       email,

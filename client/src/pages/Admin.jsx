@@ -8,7 +8,6 @@ const Admin = () => {
     const fetchData = async () => {
       try {
         const result = await getAllUsers();
-        console.log(result.message);
         setUserData(result.message);
       } catch (error) {
         console.error("Failed to fetch users:", error);

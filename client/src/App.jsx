@@ -34,7 +34,14 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<Admin />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/forecaster"
           element={

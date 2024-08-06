@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS options
 const corsOptions = {
-  origin: process.env.REACT_APP_URL || "http://localhost:5173",
+  origin: "http://85.31.225.251/",
   credentials: true,
 };
 

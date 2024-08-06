@@ -99,7 +99,9 @@ const LoginPage = () => {
   };
 
   const handleAdminLogin = () => {
-    const url = "http://localhost:5173/admin/login";
+    const url =
+      `${import.meta.env.VITE_PRODUCTION_URL}/admin/login` ||
+      "http://localhost:5173/admin/login";
     window.open(url, "_blank");
   };
 

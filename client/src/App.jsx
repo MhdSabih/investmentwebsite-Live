@@ -18,7 +18,8 @@ const App = () => {
 
   useEffect(() => {
     const storedToken = localStorage.getItem("_Token_");
-    if (storedToken) {
+    const adminToken = localStorage.getItem("admin");
+    if (storedToken || adminToken) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS options
 const corsOptions = {
-  origin: "http://85.31.225.251/",
+  origin: "http://divinedigits.org/",
   credentials: true,
 };
 

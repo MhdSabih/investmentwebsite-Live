@@ -2,7 +2,6 @@ import loginBG from "../uploads/loginBG.jpg";
 import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import download from "../uploads/download.svg";
 import { useState } from "react";
 import { LoginUser, SignUpUser } from "../api/Auth";
 
@@ -160,7 +159,7 @@ const LoginPage = () => {
                   Login
                 </button>
               </div>
-              <p className="mt-12">&#169; 2024 SS&C Intralinks, Inc.</p>
+              <p className="mt-12">&#169; 2023 Divine Digits, LLC.</p>
             </div>
           </>
         ) : (
@@ -217,18 +216,11 @@ const LoginPage = () => {
                   Sign up
                 </button>
               </div>
-              <p className="mt-12">&#169; 2024 SS&C Intralinks, Inc.</p>
+              <p className="mt-12">&#169; 2023 Divine Digits, LLC. </p>
             </div>
           </>
         )}
 
-        <div className="mt-12 flex justify-center">
-          <img
-            src={download}
-            alt="Download"
-            className="w-48 h-24 object-contain"
-          />
-        </div>
         <span
           className="flex justify-end text-red-600 font-semibold cursor-pointer"
           onClick={handleAdminLogin}

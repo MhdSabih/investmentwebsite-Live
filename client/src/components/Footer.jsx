@@ -87,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="font-sans p-8 text-start text-gray-300 md:text-center md:text-lg md:p-4">
-          © 2023 ZarFi, LLC. All rights reserved.
+          © 2023 Divine Digits, LLC. All rights reserved.
         </p>
       </div>
     </footer>

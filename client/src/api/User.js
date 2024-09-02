@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const serverUrl =
-  import.meta.env.VITE_SERVER_API || "http://localhost:5000/api";
+const serverUrl = import.meta.env.VITE_SERVER_API;
 export const getAllUsers = async () => {
   try {
     const response = await axios.get(`${serverUrl}/users`);

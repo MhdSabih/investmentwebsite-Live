@@ -11,10 +11,11 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const Production_URL = process.env.PRODUCTION_URL;
 
 // CORS options
 const corsOptions = {
-  origin: "http://divinedigits.org/",
+  origin: Production_URL,
   credentials: true,
 };
 

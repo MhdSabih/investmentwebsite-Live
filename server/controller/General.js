@@ -26,3 +26,19 @@ export const getAllAdmins = async (req, res) => {
     res.status(500).send({ message: error.message });
   }
 };
+
+export const updateUserStatus = async (req, res) => {
+  try {
+    const { userId, status } = req.body;
+    const user = await UserModel.findById(userId);
+    if (!user) {
+      return res.status(404).send({ message: "User not found." });
+    }
+    user.status = status;
+    await user.save();
+
+    res.status(200).send({ message: "User status updated successfully." });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};

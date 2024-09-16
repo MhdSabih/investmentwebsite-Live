@@ -15,6 +15,11 @@ const UserSchema = new Schema({
     enum: ["USER", "ADMIN"],
     default: "USER",
   },
+  userStatus: {
+    type: String,
+    enum: ["ACTIVE", "INACTIVE"],
+    default: "INACTIVE",
+  },
 });
 
 export const UserModel = model("User", UserSchema);

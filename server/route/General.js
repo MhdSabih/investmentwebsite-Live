@@ -1,10 +1,14 @@
 import express from "express";
-import { getAllAdmins, getAllUsers } from "../controller/General.js";
+import {
+  getAllAdmins,
+  getAllUsers,
+  updateUserStatus,
+} from "../controller/General.js";
 
 const router = express();
 
 router.get("/users", getAllUsers);
 router.get("/admins", getAllAdmins);
-router.post("/update/status");
+router.post("/update/status", updateUserStatus);
 
 export default router;

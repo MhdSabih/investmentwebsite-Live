@@ -1,7 +1,9 @@
 import { connect } from "mongoose";
+import dotenv from "dotenv";
 
-const uri =
-  "mongodb+srv://mohammadsabihka68:SwfT9eWSGkn73lcf@cluster0.txihnua.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+dotenv.config();
+
+const uri = process.env.DB_URI;
 
 export const connection = () => {
   connect(uri)

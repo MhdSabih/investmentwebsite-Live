@@ -34,10 +34,28 @@ export const updateUserStatus = async (req, res) => {
     if (!user) {
       return res.status(404).send({ message: "User not found." });
     }
-    user.status = status;
+    user.userStatus = status;
     await user.save();
 
     res.status(200).send({ message: "User status updated successfully." });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
+export const getAllUsersStatus = async (req, res) => {
+  try {
+    const users = await UserModel.find({});
+    if (!users) {
+      return res.status(404).send({ message: "No users found." });
+    }
+    const usersStatus = users.map((user) => ({
+      id: user._id,
+      email: user.email,
+      userStatus: user.userStatus,
+    }));
+
+    res.status(200).send({ message: usersStatus });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }

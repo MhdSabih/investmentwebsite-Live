@@ -3,6 +3,7 @@ import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LoginUser, SignUpUser } from "../api/Auth";
 
 const LoginPage = () => {
@@ -18,6 +19,8 @@ const LoginPage = () => {
   const [loginFormError, setLoginFormError] = useState(null);
   const [signUpFormError, setSignUpFormError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const Loader = () => {
     return (
@@ -53,7 +56,6 @@ const LoginPage = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!loginForm.email || !loginForm.password) {
       setLoginFormError("Please enter both email and password.");
       return;
@@ -64,7 +66,8 @@ const LoginPage = () => {
     setIsLoading(false);
 
     if (result.message.user) {
-      localStorage.setItem("_Token_", result.message.accessToken);
+      localStorage.setItem("accessToken", result.message.accessToken);
+      localStorage.setItem("userStatus", result.message.user.userStatus);
       toast.dark("Login Successful!");
       window.location.href = "/";
     } else {
@@ -98,10 +101,7 @@ const LoginPage = () => {
   };
 
   const handleAdminLogin = () => {
-    const url =
-      `${import.meta.env.VITE_PRODUCTION_URL}/admin/login` ||
-      "http://localhost:5173/admin/login";
-    window.open(url, "_blank");
+    navigate("/admin/login");
   };
 
   return (

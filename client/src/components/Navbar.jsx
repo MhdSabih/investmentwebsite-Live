@@ -4,19 +4,24 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userStatus, setUserStatus] = useState(null);
 
   useEffect(() => {
-    const accessToken = localStorage.getItem("_Token_");
-    setIsLoggedIn(accessToken ? true : false); // Update isLoggedIn based on localStorage
-  }, []); // Only run once on component mount to initialize state
+    const accessToken = localStorage.getItem("accessToken");
+    const getUserStatus = localStorage.getItem("userStatus");
+    setIsLoggedIn(accessToken ? true : false);
+    setUserStatus(getUserStatus === "ACTIVE" ? true : false);
+  }, []);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("_Token_");
-    setIsLoggedIn(false); // Update isLoggedIn state immediately on logout
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("userStatus");
+    setIsLoggedIn(false);
+    window.location.href = "/";
   };
 
   return (
@@ -100,14 +105,16 @@ const Navbar = () => {
                     Logout
                   </button>
                 </li>
-                <li>
-                  <NavLink
-                    to="/forecaster"
-                    className="block py-2 px-3 text-gray-300 rounded hover:text-gold md:p-0 dark:text-white md:dark:text-blue-500"
-                  >
-                    Forecaster
-                  </NavLink>
-                </li>
+                {userStatus && (
+                  <li>
+                    <NavLink
+                      to="/forecaster"
+                      className="block py-2 px-3 text-gray-300 rounded hover:text-gold md:p-0 dark:text-white md:dark:text-blue-500"
+                    >
+                      Forecaster
+                    </NavLink>
+                  </li>
+                )}
               </>
             ) : (
               <li>

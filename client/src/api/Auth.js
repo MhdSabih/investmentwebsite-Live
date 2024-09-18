@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const serverUrl = import.meta.env.VITE_SERVER_API;
+// const serverUrl = import.meta.env.VITE_SERVER_API;
+const serverUrl = import.meta.env.VITE_DEVELOPMENT_URL;
 axios.defaults.withCredentials = true;
 
 export const LoginUser = async (email, password) => {

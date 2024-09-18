@@ -8,23 +8,11 @@ import LoginPage from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
 import Forecaster from "./pages/Forecaster";
 import Footer from "./components/Footer";
-import { useEffect, useState } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLogin from "./components/AdminLogin";
 import Admin from "./pages/Admin";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem("_Token_");
-    const adminToken = localStorage.getItem("admin");
-    if (storedToken || adminToken) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, []);
   return (
     <Router>
       <SpeedInsights />
@@ -38,7 +26,7 @@ const App = () => {
         <Route
           path="/admin/dashboard"
           element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
+            <ProtectedRoute adminOnly={true}>
               <Admin />
             </ProtectedRoute>
           }
@@ -46,7 +34,7 @@ const App = () => {
         <Route
           path="/forecaster"
           element={
-            <ProtectedRoute isLoggedIn={isLoggedIn}>
+            <ProtectedRoute>
               <Forecaster />
             </ProtectedRoute>
           }

@@ -12,10 +12,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const Production_URL = process.env.PRODUCTION_URL;
+const Development_URL = process.env.DEVELOPMENT_URL;
 
 // CORS options
 const corsOptions = {
-  origin: Production_URL,
+  origin: Development_URL,
+  // origin: Production_URL,
   credentials: true,
 };
 

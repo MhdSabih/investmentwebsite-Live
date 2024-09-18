@@ -16,8 +16,8 @@ const Development_URL = process.env.DEVELOPMENT_URL;
 
 // CORS options
 const corsOptions = {
-  origin: Development_URL,
-  // origin: Production_URL,
+  // origin: Development_URL,
+  origin: Production_URL,
   credentials: true,
 };
 
